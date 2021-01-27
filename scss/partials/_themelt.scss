@@ -42,7 +42,7 @@
 .sidebar-widget .podcast_player {
     margin: 15px 0;
     position: absolute;
-    top: -8em;
+    top: -13em;
     left: 0;
     z-index: 1;
 }
@@ -135,8 +135,9 @@
   .sidebar-widget .podcast_player {
       margin: 15px 0;
       position: absolute;
-      top: -10em;
+      top: -13em;
       left: 0;
+      width: 100%;
   }
   .recent-posts {
     padding-top: 12em;
