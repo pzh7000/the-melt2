@@ -6,7 +6,7 @@ gulp.task('sass', function() {
   return gulp.src('scss/**/*.scss') // Gets all files ending with .scss in app/scss and children dirs
     .pipe(sass({outputStyle: 'compressed'}))
     .pipe(gulp.dest('css'))
-})
+});
 
 gulp.task('minify-css', () => {
   return gulp.src('styles/*.css')
@@ -15,6 +15,10 @@ gulp.task('minify-css', () => {
 });
 
 gulp.task('watch', function(){
-  gulp.watch('scss/**/*.scss', gulp.series('sass'));
+  gulp.watch('scss/**/*.scss', gulp.series('sass', 'minify-css'));
   // Other watchers
-})
+});
+
+gulp.task('css', async function() {
+  gulp.series('sass', 'minify-css');
+});

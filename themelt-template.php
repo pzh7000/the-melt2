@@ -1,7 +1,7 @@
 <?php /* Template Name: The Melt Page Template */ get_header(); ?>
 <!-- The Melt Template -->
 	<div class="hero">
-			<h1 class="title">The Melt</h1>
+			<img id="home-instagram" src="/wp-content/uploads/2021/01/TheMelt-artworkWEB_logoONLY.png">
 	</div>
 
 	<main role="main">
