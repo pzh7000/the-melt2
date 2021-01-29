@@ -15,6 +15,7 @@
   height: 53px;
   background-color: transparent;
   z-index: 2;
+  transition: background-color 0.5s;
 
   a {
     color: $white;
@@ -22,13 +23,18 @@
     font-size: 22px;
 
     h1 {
+      color: rgba(255,255,255,0);
       font-size: 22px;
+      transition: color 0.5s;
     }
   }
 }
 
 .topnav.scrolled {
   background-color: $black;
+  a h1 {
+    color: rgba(255,255,255,1);
+  }
 }
 
 .homeLogo {

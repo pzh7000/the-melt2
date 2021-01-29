@@ -39,7 +39,7 @@
 							<div class="logo-title">
 								<a class="logo h1" href="<?php echo home_url(); ?>">
 									<!-- <img src="<?php echo get_template_directory_uri(); ?>/img/square_one_logo_only.png" alt="Square One Career Coaching" class=""> -->
-									<h1>The Melt Podcast</h1>
+									<h1 class="desktopNav">The Melt</h1>
 								</a>
 							</div>
 
