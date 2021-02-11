@@ -1,0 +1,69 @@
+.wrapper {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 300px;
+}
+
+.parallax__group {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  transform-style: preserve-3d;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.sky {
+  background: url('/wp-content/uploads/2021/02/06_background.jpg') no-repeat center;
+  background-size: cover;
+  transform: translateZ(-600px) scale(3);
+  z-index: 1;
+}
+
+.geometry {
+  background: url('/wp-content/uploads/2021/02/05_geometry.png') no-repeat center;
+  background-size: cover;
+  transform: translateZ(-525px) scale(2.75);
+  z-index: 2;
+}
+
+.moon {
+  background: url('/wp-content/uploads/2021/02/04_moon.png') no-repeat center;
+  background-size: cover;
+  transform: translateZ(-400px) scale(2.33333333);
+  z-index: 3;
+}
+
+.themelt-logo {
+  background: url('/wp-content/uploads/2021/02/03_logo.png') no-repeat center;
+  background-size: cover;
+  transform: translateZ(-250px) scale(1.833333333);
+  z-index: 4;
+}
+
+.shrooms {
+  background: url('/wp-content/uploads/2021/02/02_mushrooms.png') no-repeat center;
+  background-size: cover;
+  transform: translateZ(-125px) scale(1.4167);
+  z-index: 5;
+}
+
+.owl {
+  background: url('/wp-content/uploads/2021/02/01_owl.png') no-repeat center;
+  background-size: cover;
+  transform: translateZ(0) scale(1);
+  z-index: 6;
+}
+
+.info-container {
+  background: #000;
+  transform: translateZ(0) scale(1);
+  z-index: 8;
+}

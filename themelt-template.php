@@ -1,122 +1,128 @@
 <?php /* Template Name: The Melt Page Template */ get_header(); ?>
 <!-- The Melt Template -->
-	<div class="hero">
-			<img id="home-instagram" src="/wp-content/uploads/2021/01/TheMelt-artworkWEB_logoONLY.png">
-	</div>
+<div class="parallax__group hero-container">
+	<div class="parallax__layer sky"></div>
+	<div class="parallax__layer geometry"></div>
+	<div class="parallax__layer moon"></div>
+	<div class="parallax__layer themelt-logo"></div>
+	<div class="parallax__layer shrooms"></div>
+	<div class="parallax__layer owl"></div>
+</div>
 
-	<main role="main">
-	<!-- Latest Episode -->
-		<div class="container-wrapper">
-			<div class="latest-episode container">
-			<?php
-				global $post;
-				$latest_post_args = array(
-					'numberposts' => 1,
-					'post_type' => 'podcast',
-					'offset' => 0
-				);
-				$latest_posts = get_posts( $latest_post_args );
-			?>
+<main role="main" class="parallax__group info-container">
+<!-- Latest Episode -->
+	<div class="container-wrapper info-container">
+		<div class="latest-episode container info-container">
+		<?php
+			global $post;
+			$latest_post_args = array(
+				'numberposts' => 1,
+				'post_type' => 'podcast',
+				'offset' => 0
+			);
+			$latest_posts = get_posts( $latest_post_args );
+		?>
 
-			<?php if ( ! empty( $latest_posts ) ) : ?>
+		<?php if ( ! empty( $latest_posts ) ) : ?>
 
-					<div class="flex-container align-center featured-img">
+				<div class="flex-container align-center featured-img">
 
-						<?php foreach ( $latest_posts as $latest_post ) : ?>
-							<?php
-							$thumb_id = get_post_thumbnail_id( $latest_post );
-							$img_url = wp_get_attachment_url( $thumb_id, 'full' );
-							// query_posts(array('post__not_in' => $ids));
-							?>
-							<figure class="related__thumb">
-								<?php if ( ! empty( $img_url ) ) : ?>
-									<img class="related__old" src="<?php echo strip_tags( $img_url ) ?>">
-								<?php endif; ?>
-							</figure>
-						<?php endforeach; ?>
+					<?php foreach ( $latest_posts as $latest_post ) : ?>
+						<?php
+						$thumb_id = get_post_thumbnail_id( $latest_post );
+						$img_url = wp_get_attachment_url( $thumb_id, 'full' );
+						// query_posts(array('post__not_in' => $ids));
+						?>
+						<figure class="related__thumb">
+							<?php if ( ! empty( $img_url ) ) : ?>
+								<img class="related__old" src="<?php echo strip_tags( $img_url ) ?>">
+							<?php endif; ?>
+						</figure>
+					<?php endforeach; ?>
 
-					</div>
+				</div>
 
-					<div class="episode-player">
+				<div class="episode-player">
 
-						<?php get_sidebar(); ?>
+					<?php get_sidebar(); ?>
 
-					</div>
+				</div>
 
 			<?php endif; ?>
 		</div>
-		</div>
-		
-		<!-- End latest post -->
-
-		<!-- Recent posts -->
-		<?php
-			$args2 = array(
-				'numberposts' => 3,
-				'post_type' => 'podcast',
-				'offset' => 1
-			);
-			$related_posts = get_posts( $args2 );
-		?>
-
-		<?php if ( ! empty( $related_posts ) ) : ?>
-			<div class="recent-posts container">
-				<div class="recent-posts-foreground">
-
-					<h2>Recent Episodes:</h2>
-
-					<div class="flex-container align-center">
-
-						<?php foreach ( $related_posts as $related_post ) : ?>
-
-							<?php
-							$thumb_id = get_post_thumbnail_id( $related_post );
-							$img_url = wp_get_attachment_url( $thumb_id, 'full' );
-							?>
-							<div class="flex-3-columns">
-
-								<a href="<?php echo get_permalink($related_post->ID) ?>" class="related__link">
-
-									<figure class="related__thumb">
-
-											<?php if ( ! empty( $img_url ) ) : ?>
-												<img class="related__old" src="<?php echo strip_tags( $img_url ) ?>">
-											<?php endif; ?>
-
-									</figure>
-
-									<h4 class="related__posttitle align-left"><?php echo $related_post->post_title ?></h4>
-								</a>
-							</div>
-						<?php endforeach; ?>
-
-					</div>
-				</div>
-
-			</div>
-		<?php endif; ?>
-
-<!-- End related post by tag -->
-
-<!-- View Archive -->
-<div class="archive-section container">
-	<a class="btn archive-btn" href="/episode-archive">Archive</a>
-	<div class="loader2"><span class="loader2__dot">.</span><span class="loader2__dot">.</span><span class="loader2__dot">.</span></div>
-</div>
-<!-- End View Archive -->
-
-<!-- View Support -->
-<div class="hero2">
-	<div class="support-section container">
-		<a class="btn support-btn" href="https://www.patreon.com/themeltpodcast">Patreon</a>
-		<div class="loader"><span class="loader__dot">.</span><span class="loader__dot">.</span><span class="loader__dot">.</span></div>
 	</div>
-</div>
+	
+	<!-- End latest post -->
 
-<!-- End View Support -->
+	<!-- Recent posts -->
+	<?php
+		$args2 = array(
+			'numberposts' => 3,
+			'post_type' => 'podcast',
+			'offset' => 1
+		);
+		$related_posts = get_posts( $args2 );
+	?>
+
+	<?php if ( ! empty( $related_posts ) ) : ?>
+		<div class="recent-posts container">
+			<div class="recent-posts-foreground">
+
+				<h2>Recent Episodes:</h2>
+
+				<div class="flex-container align-center">
+
+					<?php foreach ( $related_posts as $related_post ) : ?>
+
+						<?php
+						$thumb_id = get_post_thumbnail_id( $related_post );
+						$img_url = wp_get_attachment_url( $thumb_id, 'full' );
+						?>
+						<div class="flex-3-columns">
+
+							<a href="<?php echo get_permalink($related_post->ID) ?>" class="related__link">
+
+								<figure class="related__thumb">
+
+										<?php if ( ! empty( $img_url ) ) : ?>
+											<img class="related__old" src="<?php echo strip_tags( $img_url ) ?>">
+										<?php endif; ?>
+
+								</figure>
+
+								<h4 class="related__posttitle align-left"><?php echo $related_post->post_title ?></h4>
+							</a>
+						</div>
+					<?php endforeach; ?>
+
+				</div>
+			</div>
+
+		</div>
+	<?php endif; ?>
+
+	<!-- End related post by tag -->
+
+	<!-- View Archive -->
+	<div class="archive-section container">
+		<a class="btn archive-btn" href="/episode-archive">Archive</a>
+		<div class="loader2"><span class="loader2__dot">.</span><span class="loader2__dot">.</span><span class="loader2__dot">.</span></div>
+	</div>
+	<!-- End View Archive -->
+
+	<!-- View Support -->
+	<div class="hero2">
+		<div class="support-section container">
+			<a class="btn support-btn" href="https://www.patreon.com/themeltpodcast">Patreon</a>
+			<div class="loader"><span class="loader__dot">.</span><span class="loader__dot">.</span><span class="loader__dot">.</span></div>
+		</div>
+	</div>
+
+	<!-- End View Support -->
 
 
-		<!-- /section -->
-	</main>
+<!-- /section -->
+</main>
+
 
 <?php get_footer(); ?>
