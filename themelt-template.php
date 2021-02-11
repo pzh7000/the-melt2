@@ -50,7 +50,7 @@
 
 			<?php endif; ?>
 		</div>
-	</div>
+
 	
 	<!-- End latest post -->
 
@@ -100,6 +100,7 @@
 
 		</div>
 	<?php endif; ?>
+</div>
 
 	<!-- End related post by tag -->
 
